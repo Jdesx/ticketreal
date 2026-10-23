@@ -4,56 +4,237 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Ticketreal Beta</title>
-<meta name="description" content="Ticketreal turns your camera roll into a diary of every show, game and trip. Sign up for the iPhone beta.">
-<meta property="og:title" content="Ticketreal">
-<meta property="og:description" content="Every show you've been to, from your camera roll. Join the iPhone beta.">
+<meta name="description" content="Ticketreal turns your camera roll into a diary of every show, game and festival you've been to, and shares the nights you choose with your friends. Join the iPhone beta.">
+<meta property="og:title" content="Ticketreal: every night out, kept">
+<meta property="og:description" content="A diary of every show, game and festival, made from your camera roll, shared with your friends. Join the iPhone beta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800&family=JetBrains+Mono:wght@500;700&display=swap">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="mock.css">
 </head>
-<body>
-<main>
-  <div class="mark">Ticketreal · iPhone beta</div>
-  <h1>Every night out, kept.</h1>
-  <p>Ticketreal finds the shows, games and festivals in your camera roll and turns them into a diary: the ticket, who you went with, the setlist or the score. Post the nights you want friends to see, and see theirs.</p>
+<body class="landing">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-ticket" viewBox="0 0 24 24"><path d="M3 7.5A1.5 1.5 0 0 1 4.5 6h15A1.5 1.5 0 0 1 21 7.5V10a2 2 0 0 0 0 4v2.5a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 16.5V14a2 2 0 0 0 0-4z"/><path d="M14.5 6.5v2M14.5 11v2M14.5 15.5v2"/></symbol>
+  <symbol id="i-friends" viewBox="0 0 24 24"><circle cx="9" cy="8.5" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 5a3.5 3.5 0 0 1 0 7M18 14.5a6.5 6.5 0 0 1 3.5 5.5"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 21.5c-4 0-6.7-2.7-6.7-6.4 0-3.5 2.5-5.5 3.7-7.9.4 1.7 1.3 2.7 2.5 3.2.3-3.5 2-6 4.6-7.6-.4 2.7.6 4.7 2.1 6.7 1 1.4 1.6 3.1 1.6 4.8 0 4.2-3.3 7.2-7.8 7.2z"/></symbol>
+  <symbol id="i-bub" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-4.5 4v-4h0A1.5 1.5 0 0 1 4 14.5z"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24"><path d="M12 15V3.5M7.5 7.5 12 3l4.5 4.5M7 10.5H5.5v10h13v-10H17"/></symbol>
+  <symbol id="i-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.3" fill="currentColor"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/><circle cx="19" cy="12" r="1.3" fill="currentColor"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="m4 7 8 6 8-6"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10.5" rx="2.5"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.8 5.6 3.8 9s-1.2 6.4-3.8 9c-2.6-2.6-3.8-5.6-3.8-9S9.4 5.6 12 3z"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="M15 4.5 7.5 12l7.5 7.5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-note" viewBox="0 0 24 24"><path d="M9 18V5.5l11-2V16"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></symbol>
+  <symbol id="i-court" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M12 5v14"/><circle cx="12" cy="12" r="2.6"/></symbol>
+  <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H4.5a3 3 0 0 0 3.5 4M16 6h3.5a3 3 0 0 1-3.5 4M12 13v4M8.5 21h7M9.5 17h5v4h-5z"/></symbol>
+  <symbol id="i-photo" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="15" rx="2.5"/><circle cx="9" cy="10" r="1.8"/><path d="m4 17.5 5-4.5 4 3.5 3-2.5 4 3.5"/></symbol>
+</svg>
 
-  <div class="stub" aria-hidden="true">
-    <small>ADMIT ONE · BETA</small>
-    <b>Every show, from your camera roll</b>
-    <span>Free while it's in beta · iPhone only</span>
+<header class="hero">
+  <div class="hero-copy">
+    <div class="mark">Ticketreal · iPhone beta</div>
+    <h1>Every night out, kept.</h1>
+    <p class="lede">Ticketreal is an iPhone app for people who go out. It finds the concerts, games and festivals in your camera roll and turns them into a diary, then lets you share the nights you choose with your friends.</p>
+    <div class="ctas"><a class="cta" href="#join">Get the beta</a><span class="note">Free · iPhone · invites through TestFlight</span></div>
+    <ul class="what">
+      <li><b>A diary</b> of every show and game, with the ticket, the setlist or the score, and who you went with.</li>
+      <li><b>A feed of your friends' nights</b>: their photos, Encores and comments.</li>
+      <li><b>Groups</b> that compare who went out most, or how the team does when you're in the building.</li>
+    </ul>
   </div>
 
-  <h2>Get an invite</h2>
-  <p>We're letting people in a few at a time through Apple's TestFlight. Leave your name and email and we'll send the invite there.</p>
-
-  <form id="signup" novalidate>
-    <label>Name <input type="text" name="name" autocomplete="name" maxlength="80" required></label>
-    <label>Email <input type="email" name="email" autocomplete="email" maxlength="254" required></label>
-    <fieldset>
-      <legend>What do you go to?</legend>
-      <div class="chips">
-        <label class="chip"><input type="checkbox" name="goes_to" value="concerts">Concerts</label>
-        <label class="chip"><input type="checkbox" name="goes_to" value="sports">Sports</label>
-        <label class="chip"><input type="checkbox" name="goes_to" value="festivals">Festivals</label>
-        <label class="chip"><input type="checkbox" name="goes_to" value="theater">Theater</label>
-        <label class="chip"><input type="checkbox" name="goes_to" value="comedy">Comedy</label>
-        <label class="chip"><input type="checkbox" name="goes_to" value="other">Other</label>
+  <div class="hero-phones" aria-label="Ticketreal on an iPhone: a night in the diary and the friends feed">
+    <div class="phone back" aria-hidden="true"><div class="sc" data-t="9:41">
+      <div class="pad r" style="padding-block:2px 8px"><span class="big sp">Friends</span><svg class="ic"><use href="#i-mail"/></svg></div>
+      <div class="pad" style="padding-bottom:8px"><div class="cap"><span class="on">Feed</span><span>Groups</span><span>Friends</span></div></div>
+      <div class="pad" style="display:grid;gap:8px">
+        <div class="ncard">
+          <div class="r"><span class="av a2">SK</span><span class="sp"><b>scott</b> <span class="dim">was at</span></span><span class="dim2 t10">2h</span></div>
+          <div class="stub fest"><span class="k">FESTIVAL · ADMIT ONE</span><span class="a">Spring Fling 2026</span><span class="m"><span>THE VOGUE</span><span>MAR 14</span></span></div>
+          <div class="g3"><div class="sq" data-s="f1"></div><div class="sq" data-s="c5"><span class="dur">0:31</span></div><div class="sq" data-s="c2"><span class="more">+61</span></div></div>
+          <div class="acts"><span class="enc"><svg class="ic s f"><use href="#i-flame"/></svg>24</span><span class="dim"><svg class="ic s"><use href="#i-bub"/></svg>8</span></div>
+          <span class="t10"><b>vince</b> <span class="dim">you were 10 ft from me the whole set</span></span>
+        </div>
+        <div class="ncard">
+          <div class="r"><span class="av a4">C</span><span class="sp"><b>chase</b> <span class="dim">was at</span></span><span class="dim2 t10">1d</span></div>
+          <div class="stub spo"><span class="k">SPORTS · ADMIT ONE</span><span class="a">Pacers 118 · Bulls 109</span></div>
+        </div>
       </div>
-    </fieldset>
-    <fieldset>
-      <legend>Do you have an iPhone?</legend>
-      <div class="chips">
-        <label class="chip"><input type="radio" name="has_iphone" value="yes" required>Yes</label>
-        <label class="chip"><input type="radio" name="has_iphone" value="no">Not yet</label>
-      </div>
-    </fieldset>
-    <label>Anything else? <span class="note">(optional)</span> <input type="text" name="note" maxlength="500"></label>
-    <div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
-    <button type="submit">Sign up</button>
-    <p class="status" role="status" aria-live="polite"></p>
-    <p class="note">You must be 18 or older. We use your email only to send the beta invite and beta news. See the <a href="privacy.html">privacy policy</a>.</p>
-  </form>
+      <nav class="oval" data-on="friends"></nav>
+    </div></div>
 
+    <div class="phone front" aria-hidden="true"><div class="sc" data-t="9:02">
+      <div class="photo" style="height:36%" data-s="c1"><div class="pad r" style="position:absolute;top:0;left:0;right:0;padding-top:6px"><span class="glass" style="border-radius:50%;width:24px;height:24px;display:grid;place-items:center"><svg class="ic s"><use href="#i-back"/></svg></span><span class="sp"></span><span class="glass" style="border-radius:999px;padding:3px 8px;font-size:9px">42 photos</span></div></div>
+      <div class="pad" style="padding-top:10px;display:grid;gap:8px">
+        <div class="stub con"><span class="k">ADMIT ONE · CONCERT</span><span class="a">The Acacia Strain</span><span class="m"><span>THE VOGUE · INDY</span><span>THU APR 2</span></span></div>
+        <div class="r"><span class="cbar" style="background:#F24040"></span><span class="sp"><b>Your 4th time seeing The Acacia Strain</b><br><span class="dim t10">With scott · Sec GA</span></span></div>
+        <div class="raised r" style="padding:8px 10px"><svg class="ic s"><use href="#i-share"/></svg><span class="sp"><b>Post this night</b><br><span class="dim t10">Friends see all of it. You pick the highlights.</span></span></div>
+        <div class="ul">The night</div>
+        <div class="raised" style="padding:4px 10px">
+          <div class="row"><span class="sp">Photos</span><span class="dim">42</span></div>
+          <div class="row hr"><span class="sp">Videos</span><span class="dim">4</span></div>
+          <div class="row hr"><span class="sp">Shows this year</span><span class="dim">19</span></div>
+        </div>
+      </div>
+    </div></div>
+  </div>
+</header>
+
+<main class="wide">
+  <section class="how">
+    <div class="mark">How it works</div>
+    <h2>From your camera roll to your friends.</h2>
+
+    <div class="steps">
+      <figure>
+        <div class="phone" aria-hidden="true"><div class="sc" data-t="9:01">
+          <div class="pad r" style="padding-block:4px 10px"><span class="sp" style="text-align:center;font-weight:600;font-size:12.5px">Found in your photos</span></div>
+          <div class="pad" style="display:grid;gap:7px">
+            <div class="raised r" style="padding:8px"><div class="photo" style="width:38px;height:38px;border-radius:7px;flex:none" data-s="c1"></div><span class="sp"><b>Last night at The Vogue</b><br><span class="dim t10">42 photos · The Acacia Strain?</span></span><span class="btn" style="padding:5px 9px">Add</span></div>
+            <div class="raised r" style="padding:8px"><div class="photo" style="width:38px;height:38px;border-radius:7px;flex:none" data-s="s1"></div><span class="sp"><b>Gainbridge Fieldhouse</b><br><span class="dim t10">Oct 23 · Pacers vs Bulls?</span></span><span class="btn" style="padding:5px 9px">Add</span></div>
+            <div class="raised r" style="padding:8px"><div class="photo" style="width:38px;height:38px;border-radius:7px;flex:none" data-s="f2"></div><span class="sp"><b>Louisville, 3 days</b><br><span class="dim t10">Sep 26–28 · Louder Than Life?</span></span><span class="btn" style="padding:5px 9px">Add</span></div>
+            <div class="ul" style="padding-top:6px">Or add one yourself</div>
+            <div class="r" style="gap:6px"><div class="btn2 sp">Scan a ticket</div><div class="btn2 sp">Type it in</div></div>
+            <span class="dim t10" style="padding-top:2px">Lineups and setlists come from setlist.fm. Games get the real final score.</span>
+          </div>
+        </div></div>
+        <figcaption><b><span class="n">1</span> It finds your nights</b>Ticketreal looks at where and when your photos were taken and suggests the shows, games and festivals you went to. Scan a ticket or type one in for the rest.</figcaption>
+      </figure>
+
+      <figure>
+        <div class="phone" aria-hidden="true"><div class="sc" data-t="9:03">
+          <div class="pad r" style="padding-block:4px 8px"><svg class="ic"><use href="#i-back"/></svg><span class="sp" style="text-align:center;font-weight:600;font-size:12.5px">Your highlights</span><span style="width:16px"></span></div>
+          <div class="pad" style="padding-bottom:8px"><div class="stub con"><span class="k">ADMIT ONE · CONCERT</span><span class="a">The Acacia Strain</span><span class="m"><span>THE VOGUE</span><span>THU APR 2</span></span></div></div>
+          <div class="pad r" style="padding-bottom:6px"><span class="ul sp">Tap your favorites</span><span class="dim t10">42 · 4 videos</span></div>
+          <div class="pad"><div class="g4">
+            <div class="sq sel" data-s="c1"><span class="ck on">1</span></div><div class="sq" data-s="c2"><span class="ck"></span></div><div class="sq sel" data-s="c3"><span class="ck on">2</span><span class="dur">0:24</span></div><div class="sq" data-s="c4"><span class="ck"></span></div>
+            <div class="sq" data-s="c5"><span class="ck"></span></div><div class="sq sel" data-s="c6"><span class="ck on">3</span></div><div class="sq" data-s="c7"><span class="ck"></span><span class="dur">0:51</span></div><div class="sq" data-s="c8"><span class="ck"></span></div>
+            <div class="sq" data-s="c2"><span class="ck"></span></div><div class="sq" data-s="c5"><span class="ck"></span></div><div class="sq" data-s="c1"><span class="ck"></span></div><div class="sq sel" data-s="c4"><span class="ck on">4</span></div>
+          </div></div>
+          <div class="pad" style="padding-top:8px">
+            <div class="ul" style="padding-bottom:2px">Who sees what</div>
+            <div class="row"><svg class="ic s"><use href="#i-friends"/></svg><span class="sp"><b>Friends</b><br><span class="dim t10">The whole night</span></span><span class="tog on"></span></div>
+            <div class="row hr"><svg class="ic s"><use href="#i-lock"/></svg><span class="sp"><b>Everyone else</b><br><span class="dim t10">Nothing. Your account is private.</span></span></div>
+          </div>
+          <div class="sp"></div>
+          <div class="pad" style="padding-bottom:22px"><div class="btn">Post · 4 picked</div></div>
+        </div></div>
+        <figcaption><b><span class="n">2</span> Post the nights you want</b>Pick your favorite photos and videos. Friends see the whole night; nobody else sees anything unless you make your account public. Photos go up without their location.</figcaption>
+      </figure>
+
+      <figure>
+        <div class="phone" aria-hidden="true"><div class="sc" data-t="9:42">
+          <div class="photo" style="height:40%" data-s="f1"><div class="pad r" style="position:absolute;top:0;left:0;right:0;padding-top:6px"><span class="glass" style="border-radius:50%;width:24px;height:24px;display:grid;place-items:center"><svg class="ic s"><use href="#i-back"/></svg></span><span class="sp"></span><span class="glass" style="border-radius:999px;padding:3px 8px;font-size:9px">1 of 64</span></div></div>
+          <div class="pad" style="padding-top:8px;display:grid;gap:7px">
+            <div class="r"><span class="cbar" style="background:#FF9426"></span><span class="sp"><b class="t13">Spring Fling 2026</b><br><span class="dim">The Vogue · Mar 14 · scott's night</span></span></div>
+            <div class="r"><div class="stack"><span class="av sm a2">SK</span><span class="av sm a1">JD</span><span class="av sm a3">V</span></div><span class="dim t10 sp">You, vince and scott were there</span></div>
+            <div class="r" style="gap:6px"><span class="btn" style="flex:1;padding:7px;display:flex;align-items:center;justify-content:center;gap:5px;background:rgba(255,148,38,.16);color:#FF9426"><svg class="ic s f"><use href="#i-flame"/></svg>Encore · 24</span></div>
+            <div class="ul" style="padding-top:2px">8 comments</div>
+            <div class="r" style="align-items:flex-start"><span class="av sm a3">V</span><span class="sp"><b>vince</b> you were 10 ft from me the whole set</span></div>
+            <div class="r" style="align-items:flex-start"><span class="av sm a1">JD</span><span class="sp"><b>jd</b> we're going together next year</span></div>
+            <div class="field">Add a comment…</div>
+          </div>
+        </div></div>
+        <figcaption><b><span class="n">3</span> See your friends' nights</b>Your feed is the nights your friends post: the ticket on top, their photos below. Give it an Encore, leave a comment, or see who else was there.</figcaption>
+      </figure>
+
+      <figure>
+        <div class="phone" aria-hidden="true"><div class="sc" data-t="9:44">
+          <div class="pad" style="padding-block:2px 8px"><div style="border-radius:12px;padding:11px;background:linear-gradient(135deg,#002D62,#0B3E86 70%,#1D5BB8);display:grid;gap:3px">
+            <div class="r"><svg class="ic s"><use href="#i-back"/></svg><span class="sp"></span><svg class="ic s"><use href="#i-more"/></svg></div>
+            <div style="font:800 23px/.95 'Big Shoulders Display','Arial Narrow',sans-serif;text-transform:uppercase">Pacers crew</div>
+            <div class="r"><div class="stack"><span class="av sm a1">JD</span><span class="av sm a2">SK</span><span class="av sm a4">C</span><span class="av sm a3">V</span></div><span class="t10" style="opacity:.8">4 members · 2026–27 season</span></div>
+          </div></div>
+          <div class="pad" style="padding-bottom:8px"><div class="cap"><span class="on">Board</span><span>Chat</span></div></div>
+          <div class="pad" style="display:grid;gap:7px">
+            <div class="ul">Pacers' record with you there</div>
+            <div class="r"><svg class="ic s" style="color:#FDBB30"><use href="#i-trophy"/></svg><span style="width:36px">chase</span><div class="bar sp"><i style="width:100%;background:#FDBB30"></i></div><b style="width:24px;text-align:right">6–1</b></div>
+            <div class="r"><b style="width:13px;text-align:center">2</b><span style="width:36px">you</span><div class="bar sp"><i style="width:66%;background:#FDBB30"></i></div><b style="width:24px;text-align:right">4–2</b></div>
+            <div class="r"><b style="width:13px;text-align:center">3</b><span style="width:36px">scott</span><div class="bar sp"><i style="width:50%;background:#FDBB30"></i></div><b style="width:24px;text-align:right">3–3</b></div>
+            <div class="r"><b style="width:13px;text-align:center">4</b><span style="width:36px">vince</span><div class="bar sp"><i style="width:16%;background:#FDBB30"></i></div><b style="width:24px;text-align:right">1–4</b></div>
+            <div class="raised" style="padding:8px 10px;margin-top:4px"><span class="dim t10">Only the totals are shared. Nobody sees which games you went to.</span></div>
+            <div class="r" style="padding-top:3px;align-items:flex-start"><span class="av sm a3">V</span><span class="sp dim"><b style="color:#fff">vince</b> I'm not allowed at games anymore</span></div>
+          </div>
+        </div></div>
+        <figcaption><b><span class="n">4</span> Compare with your crew</b>Make a group for a team's season, a shared taste in music, or just you and one friend. The board ranks who went out most, or who's the team's lucky charm.</figcaption>
+      </figure>
+
+      <figure>
+        <div class="phone" aria-hidden="true"><div class="sc msg" data-t="9:15">
+          <div style="display:grid;justify-items:center;gap:3px;padding:2px 0 10px;border-bottom:1px solid rgba(255,255,255,.08)"><span class="av a5" style="width:34px;height:34px;font-size:12px">M</span><span class="t10">Maya</span></div>
+          <div class="pad" style="display:flex;flex-direction:column;gap:6px;padding-top:12px">
+            <div class="photo" style="align-self:flex-end;width:66%;aspect-ratio:4/5;border-radius:16px" data-s="c3"></div>
+            <div class="bub me">Check out this picture from the Movements show last night. See the whole night on Ticketreal: <u>jdesx.github.io/ticketreal</u></div>
+            <div class="bub them">ok I'm jealous. what is this app</div>
+          </div>
+          <div class="sp"></div>
+          <div class="pad" style="padding-bottom:22px"><div class="field" style="border-radius:999px">iMessage</div></div>
+        </div></div>
+        <figcaption><b><span class="n">5</span> Text a photo to anyone</b>Send one photo from a night to someone who doesn't have the app yet. It goes without its location, with a line about the show.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="for">
+    <div class="mark">Made for</div>
+    <h2>However you go out.</h2>
+    <div class="uses">
+      <div><span class="bar-c" style="background:#F24040"></span><b>Concerts</b><p>Every show you've seen, with the setlist. "Your 4th time seeing Movements" is counted for you.</p></div>
+      <div><span class="bar-c" style="background:#3A7BF2"></span><b>Sports</b><p>The real final score of every game you were at, and your team's record with you in the building.</p></div>
+      <div><span class="bar-c" style="background:#FF9426"></span><b>Festivals</b><p>A whole weekend as one night, with the lineup and every set you caught.</p></div>
+      <div><span class="bar-c" style="background:#34C759"></span><b>Trips and the rest</b><p>Road trips, a day out, a night worth keeping. Not everything has to be a show.</p></div>
+    </div>
+  </section>
+
+  <section class="promise">
+    <div><b>Your diary stays yours.</b><p>It lives on your phone and in your own iCloud. Only the nights you post go to Ticketreal, and only to the people you allow.</p></div>
+    <div><b>No ads. No tracking.</b><p>We don't sell or share what you do. Photos are sent without their location.</p></div>
+    <div><b>Friends, not followers.</b><p>Accounts start private. Friends see your posts; strangers see nothing unless you say so.</p></div>
+  </section>
+
+  <section class="join" id="join">
+    <div class="join-copy">
+      <div class="mark">The beta</div>
+      <h2>Get an invite.</h2>
+      <p>We're letting people in a few at a time through Apple's TestFlight. Leave your name and email and we'll send the invite there. It's free, and you'll be helping decide what Ticketreal becomes.</p>
+    </div>
+
+    <form id="signup" novalidate>
+      <label>Name <input type="text" name="name" autocomplete="name" maxlength="80" required></label>
+      <label>Email <input type="email" name="email" autocomplete="email" maxlength="254" required></label>
+      <fieldset>
+        <legend>What do you go to?</legend>
+        <div class="chips">
+          <label class="chip"><input type="checkbox" name="goes_to" value="concerts">Concerts</label>
+          <label class="chip"><input type="checkbox" name="goes_to" value="sports">Sports</label>
+          <label class="chip"><input type="checkbox" name="goes_to" value="festivals">Festivals</label>
+          <label class="chip"><input type="checkbox" name="goes_to" value="theater">Theater</label>
+          <label class="chip"><input type="checkbox" name="goes_to" value="comedy">Comedy</label>
+          <label class="chip"><input type="checkbox" name="goes_to" value="other">Other</label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Do you have an iPhone?</legend>
+        <div class="chips">
+          <label class="chip"><input type="radio" name="has_iphone" value="yes" required>Yes</label>
+          <label class="chip"><input type="radio" name="has_iphone" value="no">Not yet</label>
+        </div>
+      </fieldset>
+      <label>Anything else? <span class="note">(optional)</span> <input type="text" name="note" maxlength="500"></label>
+      <div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+      <button type="submit">Sign up</button>
+      <p class="status" role="status" aria-live="polite"></p>
+      <p class="note">You must be 18 or older. We use your email only to send the beta invite and beta news. See the <a href="privacy.html">privacy policy</a>.</p>
+    </form>
+  </section>
+
+  <p class="note fine">Phone screens are drawn to show how the app works; the photos in them are illustrations.</p>
   <footer><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:JD@jdmeyerconsulting.com">Contact</a></footer>
 </main>
+<script src="photos.js"></script>
 <script>
 const SERVER = "https://pdzgdwvoqwjbqtzmnbjn.supabase.co", KEY = "sb_publishable_ST1KmzDsBo8nXe-e1KjO5w_ALfPbQGj";
 const form = document.getElementById("signup"), status = form.querySelector(".status"), button = form.querySelector("button");

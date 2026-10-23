@@ -51,3 +51,58 @@ button[disabled] { opacity: .5; cursor: default; }
 .hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 footer { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 13px; color: var(--faint); display: flex; gap: 18px; flex-wrap: wrap; }
 footer a { color: var(--muted); }
+
+/* The signup page: a hero with two phones, how it works, who it's for, then the form. */
+body.landing { overflow-x: hidden; }
+.landing main.wide { max-width: 1120px; padding-top: 0; }
+.landing h1 { font-family: "Big Shoulders Display", "Arial Narrow", Helvetica, sans-serif; font-size: clamp(52px, 9vw, 96px); line-height: .9; }
+.landing h2 { font: 800 clamp(34px, 5vw, 54px)/.95 "Big Shoulders Display", "Arial Narrow", Helvetica, sans-serif; text-transform: uppercase;
+              letter-spacing: .005em; color: var(--text); margin: 10px 0 28px; }
+.hero { max-width: 1120px; margin: 0 auto; padding: 48px max(20px, env(safe-area-inset-right)) 40px max(20px, env(safe-area-inset-left));
+        display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 470px); gap: 40px; align-items: center; }
+.lede { font-size: 18px; color: var(--soft); max-width: 34em; }
+.ctas { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin: 24px 0 26px; }
+.cta { background: #fff; color: var(--ground); text-decoration: none; font-weight: 600; border-radius: 11px; padding: 14px 22px; }
+.what { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.what li { padding-left: 16px; border-left: 3px solid var(--festival); color: var(--muted); max-width: 40em; }
+.what li:nth-child(2) { border-color: var(--concert); }
+.what li:nth-child(3) { border-color: #3A7BF2; }
+.what b { color: var(--text); font-weight: 600; }
+.hero-phones { position: relative; height: 560px; }
+.hero-phones .phone { position: absolute; width: 250px; }
+.hero-phones .back { right: 0; top: 0; transform: rotate(4deg); opacity: .9; }
+.hero-phones .front { left: 0; top: 40px; transform: rotate(-3deg); z-index: 2; }
+
+section { padding: 56px 0 8px; border-top: 1px solid var(--line); margin-top: 24px; }
+.steps { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 40px 26px; }
+.steps figure { margin: 0; display: grid; gap: 16px; justify-items: center; align-content: start; }
+.steps figcaption { color: var(--muted); font-size: 15px; max-width: 290px; }
+.steps figcaption b { display: flex; align-items: center; gap: 8px; color: var(--text); font-size: 17px; margin-bottom: 4px; }
+.steps .n { font: 700 12px ui-monospace, Menlo, monospace; color: var(--ground); background: var(--festival); border-radius: 999px;
+            width: 22px; height: 22px; display: grid; place-items: center; flex: none; }
+
+.uses { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+.uses > div { background: var(--raised); border: 1px solid var(--line); border-radius: 14px; padding: 18px 18px 18px 22px; position: relative; overflow: hidden; }
+.uses .bar-c { position: absolute; left: 0; top: 0; bottom: 0; width: 4px; }
+.uses b { color: var(--text); font-size: 17px; }
+.uses p { margin: 6px 0 0; color: var(--muted); font-size: 15px; }
+
+.promise { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 24px; }
+.promise b { color: var(--text); font-size: 16px; }
+.promise p { margin: 6px 0 0; color: var(--muted); font-size: 15px; }
+
+.join { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 460px); gap: 40px; align-items: start; }
+.join form { margin-top: 8px; background: var(--raised); border: 1px solid var(--line); border-radius: 18px; padding: 22px; }
+.fine { margin-top: 40px; }
+
+@media (max-width: 880px) {
+  .hero, .join { grid-template-columns: 1fr; }
+  .hero { padding-top: 32px; }
+  .hero-phones { height: 520px; max-width: 420px; width: 100%; margin: 0 auto; }
+  .hero-phones .phone { width: 220px; }
+}
+@media (max-width: 420px) {
+  .hero-phones { height: 440px; }
+  .hero-phones .phone { width: 190px; }
+  .hero-phones .front { top: 30px; }
+}
