@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Ticketreal Beta</title>
+<meta name="description" content="Ticketreal turns your camera roll into a diary of every show, game and trip. Sign up for the iPhone beta.">
+<meta property="og:title" content="Ticketreal">
+<meta property="og:description" content="Every show you've been to, from your camera roll. Join the iPhone beta.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <div class="mark">Ticketreal · iPhone beta</div>
+  <h1>Every night out, kept.</h1>
+  <p>Ticketreal finds the shows, games and festivals in your camera roll and turns them into a diary: the ticket, who you went with, the setlist or the score. Post the nights you want friends to see, and see theirs.</p>
+
+  <div class="stub" aria-hidden="true">
+    <small>ADMIT ONE · BETA</small>
+    <b>Every show, from your camera roll</b>
+    <span>Free while it's in beta · iPhone only</span>
+  </div>
+
+  <h2>Get an invite</h2>
+  <p>We're letting people in a few at a time through Apple's TestFlight. Leave your name and email and we'll send the invite there.</p>
+
+  <form id="signup" novalidate>
+    <label>Name <input type="text" name="name" autocomplete="name" maxlength="80" required></label>
+    <label>Email <input type="email" name="email" autocomplete="email" maxlength="254" required></label>
+    <fieldset>
+      <legend>What do you go to?</legend>
+      <div class="chips">
+        <label class="chip"><input type="checkbox" name="goes_to" value="concerts">Concerts</label>
+        <label class="chip"><input type="checkbox" name="goes_to" value="sports">Sports</label>
+        <label class="chip"><input type="checkbox" name="goes_to" value="festivals">Festivals</label>
+        <label class="chip"><input type="checkbox" name="goes_to" value="theater">Theater</label>
+        <label class="chip"><input type="checkbox" name="goes_to" value="comedy">Comedy</label>
+        <label class="chip"><input type="checkbox" name="goes_to" value="other">Other</label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Do you have an iPhone?</legend>
+      <div class="chips">
+        <label class="chip"><input type="radio" name="has_iphone" value="yes" required>Yes</label>
+        <label class="chip"><input type="radio" name="has_iphone" value="no">Not yet</label>
+      </div>
+    </fieldset>
+    <label>Anything else? <span class="note">(optional)</span> <input type="text" name="note" maxlength="500"></label>
+    <div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+    <button type="submit">Sign up</button>
+    <p class="status" role="status" aria-live="polite"></p>
+    <p class="note">You must be 18 or older. We use your email only to send the beta invite and beta news. See the <a href="privacy.html">privacy policy</a>.</p>
+  </form>
+
+  <footer><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:JD@jdmeyerconsulting.com">Contact</a></footer>
+</main>
+<script>
+const SERVER = "https://pdzgdwvoqwjbqtzmnbjn.supabase.co", KEY = "sb_publishable_ST1KmzDsBo8nXe-e1KjO5w_ALfPbQGj";
+const form = document.getElementById("signup"), status = form.querySelector(".status"), button = form.querySelector("button");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const f = new FormData(form);
+  if (f.get("website")) { status.textContent = "You're on the list."; return; }   // a bot filled the hidden field
+  const name = String(f.get("name") || "").trim(), email = String(f.get("email") || "").trim();
+  const iphone = f.get("has_iphone");
+  if (!name) return say("Add your name.");
+  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return say("That email doesn't look right.");
+  if (!iphone) return say("Let us know if you have an iPhone.");
+
+  button.disabled = true; say("Signing you up…");
+  try {
+    const res = await fetch(`${SERVER}/rest/v1/beta_signups`, {
+      method: "POST",
+      headers: { apikey: KEY, "Content-Type": "application/json", Prefer: "return=minimal" },
+      body: JSON.stringify({ name, email, goes_to: f.getAll("goes_to"), has_iphone: iphone === "yes", note: String(f.get("note") || "").trim() || null }),
+    });
+    if (res.ok || res.status === 409) {
+      form.querySelectorAll("input, fieldset").forEach((el) => (el.disabled = true));
+      say(res.ok ? "You're on the list. Watch for an email from TestFlight." : "You're already on the list.");
+      return;
+    }
+    say("That didn't go through. Try again in a minute.");
+  } catch {
+    say("Couldn't reach the server. Check your connection and try again.");
+  }
+  button.disabled = false;
+});
+function say(text) { status.textContent = text; }
+</script>
+</body>
+</html>

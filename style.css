@@ -1,0 +1,53 @@
+/* Ticketreal's public pages: the app's own look. Dark ground, white text, the cream ticket stub. */
+:root {
+  --ground: #1A1A1F; --raised: rgba(255,255,255,.065); --line: rgba(255,255,255,.09);
+  --text: #fff; --soft: rgba(255,255,255,.72); --muted: rgba(255,255,255,.45); --faint: rgba(255,255,255,.3);
+  --stub: #F4ECDD; --stub-ink: #2A2118; --concert: #F24040; --festival: #FF9426;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--ground); color: var(--soft);
+  font: 16px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+main { max-width: 680px; margin: 0 auto; padding: 40px max(20px, env(safe-area-inset-right)) 64px max(20px, env(safe-area-inset-left)); }
+a { color: var(--text); }
+.mark { font: 700 11px ui-monospace, Menlo, monospace; letter-spacing: .18em; color: var(--festival); text-transform: uppercase; }
+h1 { font: 800 clamp(40px, 9vw, 64px)/.95 "Arial Narrow", "Helvetica Neue", Helvetica, sans-serif; letter-spacing: .005em;
+     text-transform: uppercase; color: var(--text); margin: 12px 0 18px; }
+h2 { font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); margin: 36px 0 10px; }
+p, li { max-width: 62ch; }
+ul { padding-left: 20px; }
+li + li { margin-top: 6px; }
+.updated { color: var(--faint); font-size: 13px; }
+.stub {
+  background: var(--stub); color: var(--stub-ink); border-radius: 4px; padding: 14px 16px; margin: 26px 0;
+  font-family: ui-monospace, Menlo, monospace;
+  -webkit-mask: radial-gradient(7px at 0 50%, #0000 98%, #000) left/51% 100% no-repeat, radial-gradient(7px at 100% 50%, #0000 98%, #000) right/51% 100% no-repeat;
+          mask: radial-gradient(7px at 0 50%, #0000 98%, #000) left/51% 100% no-repeat, radial-gradient(7px at 100% 50%, #0000 98%, #000) right/51% 100% no-repeat;
+}
+.stub b { display: block; font: 800 22px/1.1 "Arial Narrow", Helvetica, sans-serif; text-transform: uppercase; margin: 2px 0 6px; }
+.stub small { font-size: 10px; letter-spacing: .14em; opacity: .65; }
+.stub span { display: block; font-size: 12px; border-top: 1px dashed rgba(42,33,24,.35); padding-top: 6px; }
+form { display: grid; gap: 12px; margin-top: 22px; }
+label { display: grid; gap: 6px; font-size: 13px; color: var(--muted); }
+input[type=text], input[type=email] {
+  font: inherit; color: var(--text); background: var(--raised); border: 1px solid var(--line); border-radius: 11px; padding: 12px 14px;
+}
+input:focus-visible, button:focus-visible, .chip:has(input:focus-visible) { outline: 2px solid var(--festival); outline-offset: 2px; }
+fieldset { border: 0; padding: 0; margin: 0; display: grid; gap: 8px; }
+legend { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--line); background: var(--raised); border-radius: 999px;
+        padding: 7px 13px; font-size: 14px; color: var(--soft); cursor: pointer; }
+.chip input { position: absolute; opacity: 0; pointer-events: none; }
+.chip:has(input:checked) { background: #fff; color: var(--ground); border-color: #fff; }
+button[type=submit] { font: 600 16px/1 inherit; font-family: inherit; color: var(--ground); background: #fff; border: 0; border-radius: 11px;
+                      padding: 15px; cursor: pointer; margin-top: 6px; }
+button[disabled] { opacity: .5; cursor: default; }
+.note { font-size: 13px; color: var(--faint); }
+.status { font-size: 15px; color: var(--text); min-height: 1.5em; }
+.hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+footer { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 13px; color: var(--faint); display: flex; gap: 18px; flex-wrap: wrap; }
+footer a { color: var(--muted); }
