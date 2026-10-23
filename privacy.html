@@ -25,7 +25,8 @@
     <li><b>Your profile:</b> your handle, display name, and whether your account is public or private (it starts private).</li>
     <li><b>Friends and safety:</b> who you're friends with, friend requests, who you've blocked, and reports you file.</li>
     <li><b>Nights you post:</b> the act, venue, date and caption; smaller copies of the night's photos and the videos you pick; which ones are your picks. Copies are made fresh on your phone before upload, so they carry no location or other photo metadata. Originals never leave your phone.</li>
-    <li><b>What people do with posted nights:</b> Encores and comments.</li>
+    <li><b>What people do with posted nights:</b> likes and comments.</li>
+    <li><b>Your stats:</b> the totals and short lists on your Concerts, Sports and Travel pages (counts, the acts and teams you've seen most, your record), worked out on your phone. Only the ones you leave switched on in Edit profile are sent; habits that say when or where to find you (your go-out night, busiest month, home turf, last outing) start switched off. The nights behind the numbers stay on your phone.</li>
     <li><b>Groups:</b> the groups you make or join, their chat, and your totals for each group (counts like shows this year, a team's record with you there, and a list of acts you've seen). The nights behind those totals stay on your phone.</li>
   </ul>
   <p>Our server is a Supabase database in the United States. Every table checks who's asking before it answers, so the database itself enforces the rules below, not just the app.</p>
@@ -34,6 +35,7 @@
   <ul>
     <li><b>Friends</b> see every photo of a night you post, plus the videos you picked, unless you hide that night from friends.</li>
     <li><b>Everyone else</b> sees nothing while your account is private. If you make it public, they see only your picks.</li>
+    <li><b>Your stats</b> are seen by friends, and by anyone if your account is public.</li>
     <li><b>Group members</b> see your totals for that group and its chat, never your nights.</li>
     <li><b>Blocking</b> someone hides you from each other completely. They aren't told.</li>
     <li><b>Reports</b> are read only by the people who run Ticketreal.</li>
@@ -54,7 +56,7 @@
   </ul>
 
   <h2>Deleting your account</h2>
-  <p>Settings › Account › Delete Account removes your account and everything on our server: your profile, friends, blocks, posted nights and their photos and videos, Encores, comments and group data. It also erases your diary from your phone and your iCloud. It can't be undone. Messages you sent to a friend remain in that conversation for them.</p>
+  <p>Settings › Account › Delete Account removes your account and everything on our server: your profile, stats, friends, blocks, posted nights and their photos and videos, likes, comments and group data. It also erases your diary from your phone and your iCloud. It can't be undone. Messages you sent to a friend remain in that conversation for them.</p>
   <p>Signing out keeps your diary on your phone and doesn't delete anything.</p>
 
   <h2>Age</h2>
