@@ -106,3 +106,10 @@ section { padding: 56px 0 8px; border-top: 1px solid var(--line); margin-top: 24
   .hero-phones .phone { width: 190px; }
   .hero-phones .front { top: 30px; }
 }
+.steps figure.band { grid-column: 1 / -1; grid-template-columns: auto minmax(0, 1fr); gap: 36px; align-items: center; justify-items: start;
+                     background: var(--raised); border: 1px solid var(--line); border-radius: 22px; padding: 28px 32px; }
+.steps figure.band figcaption { max-width: 30em; font-size: 16px; }
+.band-h { display: block; font: 800 clamp(28px, 4vw, 40px)/.95 "Big Shoulders Display", "Arial Narrow", sans-serif; text-transform: uppercase; color: var(--text); margin: 6px 0 12px; }
+@media (max-width: 640px) {
+  .steps figure.band { grid-template-columns: 1fr; justify-items: center; padding: 22px 18px; gap: 20px; }
+}
