@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>A night on Ticketreal</title>
+<meta name="description" content="A night out, shared from Ticketreal.">
+<meta property="og:title" content="A night out, on Ticketreal">
+<meta property="og:description" content="See the night, then track every show, game and trip of your own.">
+<link rel="stylesheet" href="../style.css?v=4">
+<style>
+  .night { max-width: 520px; margin: 0 auto; padding: 24px max(16px, env(safe-area-inset-right)) 48px max(16px, env(safe-area-inset-left)); display: grid; gap: 18px; }
+  .night img.card { width: 100%; border-radius: 16px; display: block; box-shadow: 0 20px 50px -20px rgba(0,0,0,.8); background: var(--raised); aspect-ratio: 9 / 16; object-fit: cover; }
+  .who { color: var(--muted); font-size: 14px; }
+  .facts { display: grid; gap: 4px; }
+  .facts b { color: var(--text); font-size: 22px; }
+  .setlist { margin: 0; padding-left: 22px; color: var(--soft); }
+  .setlist li { padding: 2px 0; }
+  .actions { display: grid; gap: 10px; }
+  .btn { display: block; text-align: center; text-decoration: none; font-weight: 600; border-radius: 12px; padding: 14px; }
+  .btn.primary { background: #fff; color: var(--ground); }
+  .btn.secondary { background: var(--raised); color: var(--text); border: 1px solid var(--line); }
+  .gone { color: var(--muted); }
+</style>
+</head>
+<body>
+<main class="night" id="night">
+  <div class="mark">Ticketreal</div>
+  <p class="gone" id="status">Loading the night…</p>
+</main>
+<script>
+const SERVER = "https://pdzgdwvoqwjbqtzmnbjn.supabase.co", KEY = "sb_publishable_ST1KmzDsBo8nXe-e1KjO5w_ALfPbQGj";
+const el = document.getElementById("night");
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const token = new URLSearchParams(location.search).get("t") || "";
+
+async function load() {
+  if (!/^[A-Za-z0-9_-]{16,40}$/.test(token)) return gone();
+  try {
+    const r = await fetch(`${SERVER}/rest/v1/rpc/shared_night`, {
+      method: "POST", headers: { apikey: KEY, "Content-Type": "application/json" }, body: JSON.stringify({ t: token }),
+    });
+    const d = r.ok ? await r.json() : null;
+    if (!d || !d.card) return gone();
+    show(d);
+  } catch { gone(); }
+}
+
+function gone() {
+  el.innerHTML = `<div class="mark">Ticketreal</div><h1>This night isn't here</h1>
+    <p class="gone">The link may be wrong, or the night was removed.</p>
+    <div class="actions"><a class="btn primary" href="../">Get the Ticketreal beta</a></div>`;
+}
+
+function show(d) {
+  const c = d.card, img = d.image ? `${SERVER}/storage/v1/object/public/shares/${d.image}` : null;
+  const day = c.day ? new Date(c.day).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" }) : "";
+  const score = c.score ? `${esc(c.score.home)} ${c.score.homeScore} – ${c.score.awayScore} ${esc(c.score.away)}` : "";
+  document.title = `${c.title} · Ticketreal`;
+  el.innerHTML = `
+    <div class="mark">Ticketreal</div>
+    ${img ? `<img class="card" src="${img}" alt="${esc(c.title)} card">` : ""}
+    <div class="facts">
+      <b>${esc(c.title)}</b>
+      ${score ? `<span>${score}</span>` : ""}
+      <span class="who">${esc([c.venue, day].filter(Boolean).join(" · "))}</span>
+      ${c.ordinal ? `<span class="who">${esc(c.ordinal)}</span>` : ""}
+      ${c.who ? `<span class="who">${esc(c.who)}'s night${c.crew && c.crew.length ? `, with ${esc(c.crew.slice(0, 4).join(", "))}` : ""}</span>` : ""}
+    </div>
+    ${c.caption ? `<p>${esc(c.caption)}</p>` : ""}
+    ${c.setlist && c.setlist.length ? `<div><h2>The setlist</h2><ol class="setlist">${c.setlist.map((s) => `<li>${esc(s)}</li>`).join("")}</ol></div>` : ""}
+    <div class="actions">
+      <a class="btn primary" href="ticketreal://night/${esc(d.night)}">Open in Ticketreal</a>
+      <a class="btn secondary" href="../">Don't have it? Get the beta</a>
+    </div>
+    <p class="note">Ticketreal finds the shows, games and trips in your camera roll and turns them into a diary you can share with friends.</p>`;
+}
+load();
+</script>
+</body>
+</html>
