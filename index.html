@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Ticketreal Beta</title>
-<meta name="description" content="Ticketreal turns your camera roll into a diary of every show, game and festival you've been to, and shares the nights you choose with your friends. Join the iPhone beta.">
-<meta property="og:title" content="Ticketreal: every night out, kept">
+<title>Seenit Beta</title>
+<meta name="description" content="Seenit turns your camera roll into a diary of every show, game and festival you've been to, and shares the nights you choose with your friends. Join the iPhone beta.">
+<meta property="og:title" content="Seenit: every night out, kept">
 <meta property="og:description" content="A diary of every show, game and festival, made from your camera roll, shared with your friends. Join the iPhone beta.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,9 +35,9 @@
 
 <header class="hero">
   <div class="hero-copy">
-    <div class="mark">Ticketreal · iPhone beta</div>
+    <div class="mark">Seenit · iPhone beta</div>
     <h1>Every night out, kept.</h1>
-    <p class="lede">Ticketreal is an iPhone app for people who go out. It finds the concerts, games and festivals in your camera roll and turns them into a diary, then lets you share the nights you choose with your friends.</p>
+    <p class="lede">Seenit is an iPhone app for people who go out. It finds the concerts, games and festivals in your camera roll and turns them into a diary, then lets you share the nights you choose with your friends.</p>
     <div class="ctas"><a class="cta" href="#join">Get the beta</a><span class="note">Free · iPhone · invites through TestFlight</span></div>
     <ul class="what">
       <li><b>A diary</b> of every show and game, with the ticket, the setlist or the score, and who you went with.</li>
@@ -46,7 +46,7 @@
     </ul>
   </div>
 
-  <div class="hero-phones" aria-label="Ticketreal on an iPhone: a night in the diary and the friends feed">
+  <div class="hero-phones" aria-label="Seenit on an iPhone: a night in the diary and the friends feed">
     <div class="phone back" aria-hidden="true"><div class="sc" data-t="9:41">
       <div class="pad r" style="padding-block:2px 8px"><span class="big sp">Friends</span><svg class="ic"><use href="#i-mail"/></svg></div>
       <div class="pad" style="padding-bottom:8px"><div class="cap"><span class="on">Feed</span><span>Groups</span><span>Friends</span></div></div>
@@ -101,7 +101,7 @@
             <span class="dim t10" style="padding-top:2px">Lineups and setlists come from setlist.fm. Games get the real final score.</span>
           </div>
         </div></div>
-        <figcaption><b><span class="n">1</span> It finds your nights</b>Ticketreal looks at where and when your photos were taken and suggests the shows, games and festivals you went to. Scan a ticket or type one in for the rest.</figcaption>
+        <figcaption><b><span class="n">1</span> It finds your nights</b>Seenit looks at where and when your photos were taken and suggests the shows, games and festivals you went to. Scan a ticket or type one in for the rest.</figcaption>
       </figure>
 
       <figure>
@@ -167,7 +167,7 @@
           <div style="display:grid;justify-items:center;gap:3px;padding:2px 0 10px;border-bottom:1px solid rgba(255,255,255,.08)"><span class="av a5" style="width:34px;height:34px;font-size:12px">M</span><span class="t10">Maya</span></div>
           <div class="pad" style="display:flex;flex-direction:column;gap:6px;padding-top:12px">
             <div class="photo" style="align-self:flex-end;width:66%;aspect-ratio:4/5;border-radius:16px" data-s="c3"></div>
-            <div class="bub me">Check out this picture from the Movements show last night. See the whole night on Ticketreal: <u>jdesx.github.io/ticketreal</u></div>
+            <div class="bub me">Check out this picture from the Movements show last night. See the whole night on Seenit: <u>getseenit.com</u></div>
             <div class="bub them">ok I'm jealous. what is this app</div>
           </div>
           <div class="sp"></div>
@@ -190,7 +190,7 @@
   </section>
 
   <section class="promise">
-    <div><b>Your diary stays yours.</b><p>It lives on your phone and in your own iCloud. Only the nights you post go to Ticketreal, and only to the people you allow.</p></div>
+    <div><b>Your diary stays yours.</b><p>It lives on your phone and in your own iCloud. Only the nights you post go to Seenit, and only to the people you allow.</p></div>
     <div><b>No ads. No tracking.</b><p>We don't sell or share what you do. Photos are sent without their location.</p></div>
     <div><b>Friends, not followers.</b><p>Accounts start private. Friends see your posts; strangers see nothing unless you say so.</p></div>
   </section>
@@ -198,8 +198,18 @@
   <section class="join" id="join">
     <div class="join-copy">
       <div class="mark">The beta</div>
-      <h2>Get an invite.</h2>
-      <p>We're letting people in a few at a time through Apple's TestFlight. Leave your name and email and we'll send the invite there. It's free, and you'll be helping decide what Ticketreal becomes.</p>
+      <h2>Get the beta.</h2>
+      <p>Seenit is in beta on Apple's TestFlight. It's free, and you'll be helping decide what Seenit becomes.</p>
+      <div class="getit" id="getit" hidden>
+        <ol class="steps">
+          <li><b>Install TestFlight</b> from the App Store, Apple's app for trying apps before they launch.</li>
+          <li><b>Tap Get Seenit</b> below on your iPhone, then Accept and Install.</li>
+          <li><b>Sign in with Apple</b> and pick a handle. Add your friends by theirs.</li>
+        </ol>
+        <a class="cta" id="tf" href="#">Get Seenit on TestFlight</a>
+        <p class="note">Not on your iPhone right now? Leave your email and we'll send the link.</p>
+      </div>
+      <p class="note" id="waitlist">We're letting people in a few at a time. Leave your name and email and we'll send the TestFlight invite.</p>
     </div>
 
     <form id="signup" novalidate>
@@ -237,6 +247,12 @@
 <script src="photos.js?v=2"></script>
 <script>
 const SERVER = "https://pdzgdwvoqwjbqtzmnbjn.supabase.co", KEY = "sb_publishable_ST1KmzDsBo8nXe-e1KjO5w_ALfPbQGj";
+// The public TestFlight link, filled in by publish.sh once Apple approves the beta. Until then it's a waitlist.
+const TESTFLIGHT = document.getElementById("tf").getAttribute("href");
+if (TESTFLIGHT.startsWith("https://testflight.apple.com/")) {
+  document.getElementById("getit").hidden = false;
+  document.getElementById("waitlist").hidden = true;
+}
 const form = document.getElementById("signup"), status = form.querySelector(".status"), button = form.querySelector("button");
 
 form.addEventListener("submit", async (e) => {
@@ -258,7 +274,8 @@ form.addEventListener("submit", async (e) => {
     });
     if (res.ok || res.status === 409) {
       form.querySelectorAll("input, fieldset").forEach((el) => (el.disabled = true));
-      say(res.ok ? "You're on the list. Watch for an email from TestFlight." : "You're already on the list.");
+      const open = TESTFLIGHT.startsWith("https://testflight.apple.com/");
+      say(open ? "You're in. On your iPhone, tap Get Seenit on TestFlight above." : res.ok ? "You're on the list. Watch for an email from TestFlight." : "You're already on the list.");
       return;
     }
     say("That didn't go through. Try again in a minute.");

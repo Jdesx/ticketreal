@@ -113,3 +113,8 @@ section { padding: 56px 0 8px; border-top: 1px solid var(--line); margin-top: 24
 @media (max-width: 640px) {
   .steps figure.band { grid-template-columns: 1fr; justify-items: center; padding: 22px 18px; gap: 20px; }
 }
+
+/* Get the beta: the TestFlight steps, shown once the public link is in */
+.getit { margin-top: 18px; display: grid; gap: 14px; }
+.getit .steps { margin: 0; padding-left: 1.3em; display: grid; gap: 8px; }
+.getit .cta { display: inline-block; justify-self: start; background: #F0AA3C; color: #1D2039; font-weight: 700; text-decoration: none; padding: 14px 22px; border-radius: 14px; }
