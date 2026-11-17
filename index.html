@@ -8,13 +8,13 @@
 <meta property="og:title" content="Seenit">
 <meta property="og:description" content="A diary of every show, game and festival you've been to, made from your camera roll and shared with your friends. Join the iPhone beta.">
 <meta property="og:image" content="https://getseenit.com/icon.png">
-<meta name="theme-color" content="#1D2039">
+<meta name="theme-color" content="#1A191E">
 <link rel="icon" href="icon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="landing.css?v=4">
+<link rel="stylesheet" href="landing.css?v=7">
 </head>
 <body>
 
@@ -32,9 +32,11 @@
       <small>Free on iPhone, through Apple's TestFlight</small>
     </div>
   </div>
-  <div class="hero-shots" aria-label="Seenit on an iPhone">
-    <div class="shot" data-label="A night"><img src="shots/night.jpg" alt="The Acacia Strain at The Vogue in Seenit, with three videos from the night"></div>
-    <div class="shot" data-label="The Diary"><img src="shots/diary.jpg" alt="The Seenit diary listing shows by month"></div>
+  <div class="stage" aria-label="Seenit on an iPhone">
+    <div class="shot back"><img src="shots/diary.jpg" alt="The Seenit diary listing shows by month"></div>
+    <div class="shot front"><img src="shots/night.jpg" alt="The Acacia Strain at The Vogue in Seenit, with three videos from the night"></div>
+    <div class="float ping" aria-hidden="true"><img src="icon.png" alt=""><div>Maya liked your night<span>The Acacia Strain · The Vogue</span></div></div>
+    <div class="float ticket stub" aria-hidden="true"><span class="k">ADMIT ONE · CONCERT</span><span class="a">The Acacia Strain</span><span class="m"><span>APR 2</span><b>SEEN 3×</b></span></div>
   </div>
 </header>
 
@@ -42,16 +44,16 @@
   <div class="wrap">
     <h2>Concerts, games and festivals all get their own ticket.</h2>
     <div class="stubs">
-      <div class="stub"><span class="k">ADMIT ONE · CONCERT</span><span class="a">The Acacia Strain</span><span class="m"><span>THE VOGUE · INDY</span><span>APR 2</span></span><p>The setlist from setlist.fm, and a count of how many times you've seen them.</p></div>
-      <div class="stub"><span class="k">ADMIT ONE · SPORTS</span><span class="a">Pacers 118, Bulls 109</span><span class="m"><span>GAINBRIDGE</span><span>OCT 23</span></span><p>The real final score, and your team's record when you're in the building.</p></div>
-      <div class="stub"><span class="k">ADMIT ONE · FESTIVAL</span><span class="a">Louder Than Life</span><span class="m"><span>LOUISVILLE · 3 DAYS</span><span>SEP 26</span></span><p>The whole weekend as one night, with the lineup and every set you caught.</p></div>
+      <div class="stub c"><span class="k">ADMIT ONE · <b>CONCERT</b></span><span class="a">The Acacia Strain</span><span class="m"><span>THE VOGUE · INDY</span><span>APR 2</span></span><p>The setlist from setlist.fm, and a count of how many times you've seen them.</p></div>
+      <div class="stub s"><span class="k">ADMIT ONE · <b>SPORTS</b></span><span class="a">Pacers 118, Bulls 109</span><span class="m"><span>GAINBRIDGE</span><span>OCT 23</span></span><p>The real final score, and your team's record when you're in the building.</p></div>
+      <div class="stub f"><span class="k">ADMIT ONE · <b>FESTIVAL</b></span><span class="a">Louder Than Life</span><span class="m"><span>LOUISVILLE · 3 DAYS</span><span>SEP 26</span></span><p>The whole weekend as one night, with the lineup and every set you caught.</p></div>
     </div>
   </div>
 </section>
 
 <main class="wrap how">
   <div class="row">
-    <div class="shot" data-label="Adding a night"><img src="shots/add.jpg" alt="Adding a new night in Seenit while it looks for events you were at"></div>
+    <div class="shot"><img src="shots/add.jpg" alt="Adding a new night in Seenit while it looks for events you were at"></div>
     <div>
       <span class="n">1</span>
       <h3>It finds your nights for you.</h3>
@@ -60,7 +62,7 @@
     </div>
   </div>
   <div class="row flip">
-    <div class="shot" data-label="Your profile"><img src="shots/you.jpg" alt="A Seenit profile with concert, sports and travel totals and a grid of nights"></div>
+    <div class="shot"><img src="shots/you.jpg" alt="A Seenit profile with concert, sports and travel totals and a grid of nights"></div>
     <div>
       <span class="n">2</span>
       <h3>Post the nights you want, with the photos you pick.</h3>
@@ -68,7 +70,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="shot" data-label="The feed"><img src="shots/feed.jpg" alt="A posted Pacers game in the Seenit feed, with the final score over the video"></div>
+    <div class="shot"><img src="shots/feed.jpg" alt="A posted Pacers game in the Seenit feed, with the final score over the video"></div>
     <div>
       <span class="n">3</span>
       <h3>See where everyone went.</h3>
@@ -108,8 +110,8 @@
   </div>
 </section>
 
-<section class="wrap join" id="join">
-  <div class="ticket">
+<section class="join" id="join">
+  <div class="wrap"><div class="ticket">
     <div class="side">
       <span class="k">ADMIT ONE · SEENIT BETA</span>
       <h2>Get the beta.</h2>
@@ -120,7 +122,7 @@
           <li>On your iPhone, tap <b>Get Seenit</b> below, then Accept and Install.</li>
           <li>Sign in with Apple, pick a handle, and add your friends.</li>
         </ol>
-        <p style="margin-top:22px"><a class="btn dark" id="tf" href="#">Get Seenit on TestFlight</a></p>
+        <p style="margin-top:22px"><a class="btn" id="tf" href="#">Get Seenit on TestFlight</a></p>
         <p class="note" style="margin-top:14px">Not on your iPhone right now? Leave your email and we'll send the link.</p>
       </div>
       <p class="note" id="waitlist">We're letting people in a few at a time. Leave your name and email and we'll send your TestFlight invite.</p>
@@ -149,11 +151,11 @@
       </fieldset>
       <label><span>Anything else? <span class="opt">(optional)</span></span><input type="text" name="note" maxlength="500"></label>
       <div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
-      <div><button class="btn dark" type="submit">Sign up</button></div>
+      <div><button class="btn" type="submit">Sign up</button></div>
       <p class="status" role="status" aria-live="polite"></p>
       <p class="fine">You must be 18 or older. We use your email only to send the beta invite and beta news. See the <a href="privacy.html">privacy policy</a>.</p>
     </form>
-  </div>
+  </div></div>
 </section>
 
 <footer class="wrap">
@@ -162,11 +164,6 @@
 </footer>
 
 <script>
-// Screenshots that haven't been added yet show their label instead of a broken image.
-document.querySelectorAll(".shot img").forEach((img) => {
-  const miss = () => img.setAttribute("data-missing", "");
-  if (img.complete && !img.naturalWidth) miss(); else img.addEventListener("error", miss);
-});
 const SERVER = "https://pdzgdwvoqwjbqtzmnbjn.supabase.co", KEY = "sb_publishable_ST1KmzDsBo8nXe-e1KjO5w_ALfPbQGj";
 // The public TestFlight link, filled in by publish.sh once Apple approves the beta. Until then it's a waitlist.
 const TESTFLIGHT = document.getElementById("tf").getAttribute("href");
